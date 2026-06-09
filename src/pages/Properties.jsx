@@ -93,7 +93,7 @@ const properties = [
 
         {/* SEARCH & FILTER */}
 
-<div className="max-w-5xl mx-auto mb-12 grid md:grid-cols-3 gap-6">
+<div className="max-w-5xl mx-auto mb-12 grid md:grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 gap-6">
 
   {/* SEARCH INPUT */}
   <input

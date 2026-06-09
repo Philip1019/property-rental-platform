@@ -15,13 +15,13 @@ function About() {
 
         <h1 className="text-5xl md:text-7xl font-bold">
 
-          About RentEase
+          About StayEase
 
         </h1>
 
         <p className="max-w-3xl mx-auto mt-8 text-lg text-gray-300">
 
-          RentEase is a modern property rental
+          StayEase is a modern property rental
           platform helping clients discover
           beautiful apartments, villas and homes
           while helping property owners connect

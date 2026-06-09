@@ -33,7 +33,7 @@ function App() {
   return (
     <BrowserRouter>
 
-      
+      <main className="pt-20"> 
 
       <Routes>
 
@@ -83,7 +83,7 @@ function App() {
 
         
       </Routes>
-
+      </main>    
     </BrowserRouter>
   );
 }

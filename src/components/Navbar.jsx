@@ -6,114 +6,162 @@ function Navbar() {
   const currentUser = JSON.parse(localStorage.getItem("currentUser"))
   const handleLogout = () => {
 
-  localStorage.removeItem("currentUser")
+    localStorage.removeItem("currentUser")
 
-  window.location.href = "/"
+    window.location.href = "/"
 
-}
+  }
   return (
-    <nav className="flex justify-between items-center p-4 shadow-md bg-white shadow-md sticky top-0 z-50">
-      <h1 className="text-2xl font-bold">
-        StayEase
-      </h1>
+    <nav className="bg-blue-900 text-white sticky top-0 z-50 shadow-lg">
 
-      <div className="flex gap-4">
-        <Link to="/">Home</Link>
-        <Link to="/properties">Properties</Link>
-        <Link to="/about">About</Link>
-        <Link to="/contact">Contact</Link>
-        
+      <div className="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
 
-        <Link
-          to="/bookings"
-          className="hover:text-blue-500 transition"
-        >
+        <Link to="/">
 
-          Bookings
+          <h1 className="text-3xl font-extrabold tracking-wide">
+
+            Stay<span className="text-yellow-400">Ease</span>
+
+          </h1>
 
         </Link>
 
-        
-
-        <Link
-          to="/favorites"
-          className="hover:text-blue-500 transition"
-        >
-
-          Favorites
-
-        </Link>
-
-        
-
-  <Link
-    to="/admin"
-    className="hover:text-blue-500 transition"
-  >
-
-    Admin
-
-  </Link>
+        <div className="hidden md:flex gap-8 font-medium">
+          <Link
+            to="/"
+            className="hover:text-yellow-300 transition duration-300">
+            Home
+          </Link>
 
 
 
+          <Link
+            to="/properties"
+            className="hover:text-yellow-300 transition duration-300"
+          >
+            Properties
+          </Link>
+
+
+          <Link
+            to="/about"
+            className="hover:text-yellow-300 transition duration-300"
+          >
+            About
+          </Link>
+
+          <Link
+            to="/contact"
+            className="hover:text-yellow-300 transition duration-300"
+          >
+            Contact
+          </Link>
+
+
+          <Link
+            to="/bookings"
+            className="hover:text-yellow-300 transition duration-300"
+          >
+            Bookings
+          </Link>
 
 
 
+          <Link
+            to="/favorites"
+            className="hover:text-yellow-300 transition duration-300"
+          >
+            Favorites
+          </Link>
+
+
+
+          {
+
+            currentUser?.email ===
+
+            "admin@stayease.com"
+
+            &&
+
+            (
+
+              <Link
+
+                to="/admin"
+
+                className="hover:text-yellow-300"
+
+              >
+
+                Admin
+
+              </Link>
+
+            )
+
+          }
+
+
+
+
+
+
+        </div>
+
+        <div className="flex items-center gap-4">
+
+          {currentUser ? (
+
+            <>
+
+              <button className="bg-yellow-400 text-black px-5 py-2 rounded-lg font-semibold">
+
+                {currentUser.name}
+
+              </button>
+
+              <button
+                onClick={handleLogout}
+                className="bg-red-600 hover:bg-red-700 transition text-white px-5 py-2 rounded-lg"
+              >
+
+                Logout
+
+              </button>
+
+            </>
+
+          ) : (
+
+            <>
+
+              <Link to="/login">
+
+                <button className="px-5 py-2 border border-white rounded-lg hover:bg-white hover:text-blue-900 transition">
+
+                  Login
+
+                </button>
+
+              </Link>
+
+              <Link to="/register">
+
+                <button className="px-5 py-2 bg-yellow-400 text-black rounded-lg hover:bg-yellow-300 transition font-semibold">
+
+                  Register
+
+                </button>
+
+              </Link>
+
+            </>
+
+          )}
+
+        </div>
       </div>
-
-      <div className="flex gap-4">
-
-  {currentUser ? (
-
-    <>
-
-      <button className="bg-blue-500 text-white px-5 py-2 rounded-lg">
-
-        {currentUser.name}
-
-      </button>
-
-      <button
-        onClick={handleLogout}
-        className="bg-red-500 text-white px-5 py-2 rounded-lg"
-      >
-
-        Logout
-
-      </button>
-
-    </>
-
-  ) : (
-
-    <>
-
-      <Link to="/login">
-
-        <button className="px-5 py-2 border border-black rounded-lg hover:bg-black hover:text-white transition">
-
-          Login
-
-        </button>
-
-      </Link>
-
-      <Link to="/register">
-
-        <button className="px-5 py-2 bg-black text-white rounded-lg hover:bg-gray-800 transition">
-
-          Register
-
-        </button>
-
-      </Link>
-
-    </>
-
-  )}
-
-</div>
     </nav>
   );
 }

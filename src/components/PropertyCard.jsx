@@ -1,5 +1,23 @@
 import { Link } from "react-router-dom"
+import { useState } from "react"
 function PropertyCard(props) {
+  const favorites =
+
+  JSON.parse(
+  localStorage.getItem("favorites")
+  ) || []
+
+  const [isFavorite, setIsFavorite] =
+
+  useState(
+
+  favorites.some(
+
+  (item) => item.id === props.id
+
+  )
+
+  )
 
   const handleFavorite = () => {
 
@@ -27,6 +45,7 @@ function PropertyCard(props) {
     )
 
     alert("Removed from favorites")
+    setIsFavorite(false)
 
   } else {
 
@@ -57,6 +76,7 @@ function PropertyCard(props) {
     )
 
     alert("Added to favorites")
+    setIsFavorite(true)
 
   }
 
@@ -79,18 +99,61 @@ function PropertyCard(props) {
       {/* PROPERTY DETAILS */}
       <div className="p-5">
 
-        <div className="flex justify-end">
+        <div className="mt-4">
 
-  <button
-    onClick={handleFavorite}
-    className="text-3xl"
-  >
+          <button
 
-    ❤️
+            onClick={handleFavorite}
 
-  </button>
+            className={`
 
-</div>
+              w-full
+
+              py-3
+
+              rounded-lg
+
+              transition
+
+              duration-300
+
+              font-semibold
+
+              ${
+
+              isFavorite
+
+              ?
+
+              "bg-red-500 hover:bg-red-600 text-white"
+
+              :
+
+              "bg-pink-500 hover:bg-pink-600 text-white"
+
+              }
+
+            `}
+
+          >
+
+            {
+
+              isFavorite
+
+              ?
+
+              "Remove From Favorites"
+
+              :
+
+              "Add To Favorites"
+
+            }
+
+          </button>
+
+        </div>
 
         <h2 className="text-2xl font-bold">
           {props.title}

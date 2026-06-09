@@ -18,6 +18,19 @@ function Register() {
 
     e.preventDefault()
 
+    const passwordRegex =
+    /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d).{8,}$/
+
+    if(!passwordRegex.test(password)){
+
+    alert(
+    "Password must contain at least:\n\n• 8 characters\n• One uppercase letter\n• One lowercase letter\n• One number"
+    )
+
+    return
+
+    }
+
     // CREATE USER OBJECT
     const userData = {
       name,

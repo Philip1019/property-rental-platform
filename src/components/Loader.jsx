@@ -1,15 +1,17 @@
-function Loader() {
+function Loader(){
 
-    return (
+    return(
 
-        <div className="flex justify-center items-center py-20">
+    <div className="flex justify-center items-center h-screen">
 
-            <div className="w-16 h-16 border-4 border-black border-t-transparent rounded-full animate-spin"></div>
+    <div className="animate-spin rounded-full h-20 w-20 border-b-4 border-blue-800">
 
-        </div>
+    </div>
+
+    </div>
 
     )
 
-}
+    }
 
 export default Loader

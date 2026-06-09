@@ -78,7 +78,7 @@ function Admin() {
 
       <section className="min-h-screen bg-gray-100 py-16 px-6">
 
-        <div className="max-w-6xl mx-auto">
+        <div className="max-w-6xl mx-auto px-6 py-20">
 
           <h1 className="text-5xl font-bold mb-10">
 
@@ -108,7 +108,7 @@ function Admin() {
                 onChange={(e) =>
                   setTitle(e.target.value)
                 }
-                className="border p-4 rounded-lg"
+                className="w-full border p-4 rounded-xl"
                 required
               />
 
@@ -119,7 +119,7 @@ function Admin() {
                 onChange={(e) =>
                   setLocation(e.target.value)
                 }
-                className="border p-4 rounded-lg"
+                className="w-full border p-4 rounded-xl"
                 required
               />
 
@@ -130,7 +130,7 @@ function Admin() {
                 onChange={(e) =>
                   setPrice(e.target.value)
                 }
-                className="border p-4 rounded-lg"
+                className="w-full border p-4 rounded-xl"
                 required
               />
 
@@ -141,11 +141,11 @@ function Admin() {
                 onChange={(e) =>
                   setImage(e.target.value)
                 }
-                className="border p-4 rounded-lg"
+                className="w-full border p-4 rounded-xl"
                 required
               />
 
-              <button className="bg-black text-white py-4 rounded-lg hover:bg-gray-800 transition md:col-span-2">
+              <button className="bg-blue-900 text-white p-4 rounded-xl hover:bg-blue-800 transition">
 
                 Add Property
 

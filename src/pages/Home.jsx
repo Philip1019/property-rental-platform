@@ -9,102 +9,172 @@ function Home() {
   return (
 
     <>
-    <Navbar />
-      <section className="min-h-screen flex flex-col items-center justify-center text-center px-6">
+      <Navbar />
+      <section className="min-h-screen flex items-center px-6 md:px-12 lg:px-20 py-20">
 
-         <motion.div
+        <motion.div
 
-            initial={{ opacity: 0, y: 100 }}
+          initial={{ opacity: 0, y: 100 }}
 
-            animate={{ opacity: 1, y: 0 }}
+          animate={{ opacity: 1, y: 0 }}
 
-            transition={{ duration: 1 }}
+          transition={{ duration: 1 }}
 
-          >
+        >
 
 
-            <h1 className="text-6xl font-bold leading-tight">
+          <h1 className="text-4xl md:text-5xl lg:text-7xl font-bold leading-tight">
 
-              Find Your Perfect
-              <span className="text-blue-500">
-                {" "}Rental Property
-              </span>
+            Find Your Perfect
+            <span className="text-blue-500">
+              {" "}Rental Property
+            </span>
 
-            </h1>
+          </h1>
 
-            <p className="mt-6 text-lg text-gray-600 max-w-2xl">
+          <p className="text-base md:text-lg lg:text-xl mt-6 text-gray-600">
 
-              Discover luxury apartments,
-              modern villas and affordable homes
-              from trusted property owners around the world.
+            Discover luxury apartments,
+            modern villas and affordable homes
+            from trusted property owners around the world.
 
-            </p>
+          </p>
 
-            <div className="flex gap-6 mt-8">
+          <div className="flex flex-col sm:flex-row gap-4 mt-8">
 
-              <button className="bg-black text-white px-8 py-4 rounded-lg hover:bg-gray-800 transition">
+            <Link to="/properties">
 
-                Explore Properties
+              <button
+
+                className="
+
+                w-full sm:w-auto
+
+                bg-blue-600
+
+                hover:bg-blue-700
+
+                text-white
+
+                px-8
+
+                py-4
+
+                rounded-xl
+
+                font-semibold
+
+                shadow-lg
+
+                transition-all
+
+                duration-300
+
+                hover:scale-105
+
+                "
+
+              >
+
+                Find Properties
 
               </button>
 
-              <button className="border border-black px-8 py-4 rounded-lg hover:bg-black hover:text-white transition">
+            </Link>
+
+            <Link to="/about">
+
+              <button
+
+                className="
+
+                w-full sm:w-auto
+
+                border-2
+
+                border-white
+
+                text-white
+
+                hover:bg-white
+
+                hover:text-blue-900
+
+                px-8
+
+                py-4
+
+                rounded-xl
+
+                font-semibold
+
+                transition-all
+
+                duration-300
+
+                hover:scale-105
+
+                "
+
+              >
 
                 Learn More
 
               </button>
 
-            </div>
+            </Link>
 
-          </motion.div>
+          </div>
 
-</section>
+        </motion.div>
 
-{/* FEATURED PROPERTIES */}
+      </section>
 
-<section className="py-20 px-6 bg-gray-100">
+      {/* FEATURED PROPERTIES */}
 
-  <div className="text-center mb-14">
+      <section className="py-20 px-6 bg-gray-100">
 
-    <h2 className="text-5xl font-bold">
-      Featured Properties
-    </h2>
+        <div className="text-center mb-14">
 
-    <p className="text-gray-600 mt-4 text-lg">
+          <h2 className="text-5xl font-bold">
+            Featured Properties
+          </h2>
 
-      Discover our most popular rentals
+          <p className="text-gray-600 mt-4 text-lg">
 
-    </p>
+            Discover our most popular rentals
 
-  </div>
+          </p>
 
-  <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10 max-w-7xl mx-auto">
+        </div>
 
-    {properties
-      .filter((property) => property.featured)
-      .map((property) => (
+        <div className="grid md:grid-cols-2 gap-12 items-center">
 
-        <PropertyCard
+          {properties
+            .filter((property) => property.featured)
+            .map((property) => (
 
-          key={property.id}
+              <PropertyCard
 
-          id={property.id}
+                key={property.id}
 
-          title={property.title}
+                id={property.id}
 
-          location={property.location}
+                title={property.title}
 
-          price={property.price}
+                location={property.location}
 
-          image={property.image}
+                price={property.price}
 
-        />
+                image={property.image}
 
-      ))}
+              />
 
-  </div>
+            ))}
 
-</section>
+        </div>
+
+      </section>
 
       <Footer />
 

@@ -131,7 +131,7 @@ const properties = [
                     <img
                         src={property.image}
                         alt={property.title}
-                        className="w-full h-[500px] object-cover"
+                        className="w-full h-[450px] object-cover rounded-2xl shadow-lg"
                     />
 
                     {/* PROPERTY DETAILS */}

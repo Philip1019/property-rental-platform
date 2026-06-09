@@ -43,7 +43,7 @@ function Contact() {
 
                 <p className="text-gray-600 mt-2">
 
-                  support@rentease.com
+                  support@stayease.com
 
                 </p>
 
@@ -87,29 +87,29 @@ function Contact() {
 
           {/* CONTACT FORM */}
 
-          <div className="bg-white p-10 rounded-2xl shadow-lg">
+          <div className="max-w-3xl mx-auto px-6 py-20">
 
             <form className="flex flex-col gap-6">
 
               <input
                 type="text"
                 placeholder="Your Name"
-                className="border p-4 rounded-lg"
+                className="w-full border p-4 rounded-xl"
               />
 
               <input
                 type="email"
                 placeholder="Your Email"
-                className="border p-4 rounded-lg"
+                className="w-full border p-4 rounded-xl"
               />
 
               <textarea
                 rows="6"
                 placeholder="Your Message"
-                className="border p-4 rounded-lg"
+                className="w-full border p-4 rounded-xl"
               ></textarea>
 
-              <button className="bg-black text-white py-4 rounded-lg hover:bg-gray-800 transition">
+              <button className="w-full bg-blue-900 text-white py-4 rounded-xl hover:bg-blue-800 transition">
 
                 Send Message
 
