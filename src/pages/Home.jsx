@@ -1,4 +1,5 @@
 import { motion } from "framer-motion"
+import { Link } from "react-router-dom"
 import Navbar from "../components/Navbar"
 import Footer from "../components/Footer"
 import properties from "../data/properties"
@@ -92,9 +93,9 @@ function Home() {
 
                 border-2
 
-                border-white
+                border-black
 
-                text-white
+                text-black
 
                 hover:bg-white
 
